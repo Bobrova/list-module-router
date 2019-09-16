@@ -1,0 +1,13 @@
+
+.list {
+  padding: 10px 30px;
+}
+
+.listMusic {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    justify-content: space-around;
+  }
+}

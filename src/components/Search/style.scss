@@ -1,0 +1,34 @@
+.search {
+  position: relative;
+  width: 50%;
+  margin: 20px auto;
+}
+
+.loupe {
+  height: 27px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 27px;
+  padding-left: 10px; 
+  color: #8c8c8c;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 5px 35px;
+  outline: none;
+  border: 1px solid #cecece;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  border-color: transparent;
+  box-shadow: 0 1px 7px 0 #cecece;
+}
+
+.searchInput:hover {
+  box-shadow: 0 1px 7px 0 #cecece;
+  border-color: transparent;
+}

@@ -1,0 +1,31 @@
+.dataInput {
+  padding: 20px 30px;
+}
+
+.formItem {
+  padding: 10px;
+}
+
+.formInput {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #2d2d2d;
+  font-size: 1em;
+}
+
+.btnAdd {
+  width: 100px;
+  height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 30px;
+  background-color: #d19c47;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 10px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #eab462;
+  }
+}
