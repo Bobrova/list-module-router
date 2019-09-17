@@ -1,19 +1,19 @@
 import { createSelector } from 'reselect';
 
 const getSearchValue = (state) => state.search;
-const getlist = (state) => state.list;
+const getList = (state) => state.list;
 const getSinger = (state) => state.form.singer;
 const getSong = (state) => state.form.song;
 
 export const currentIdSelector = createSelector(
-  [getlist],
+  [getList],
   list => {
     return list.length !== 0 ? list[list.length - 1].id : 0;
   },
 );
 
 export const visibleListSelector = createSelector(
-  [getSearchValue, getlist],
+  [getSearchValue, getList],
   (text = '', list) => {
     return list.filter(
       item => item.song.toUpperCase().includes(text.toUpperCase())
@@ -33,6 +33,11 @@ export const songSelector = createSelector(
 );
 
 export const listSelector = createSelector(
-  [getlist],
+  [getList],
   list => list,
+);
+
+export const searchSelector = createSelector(
+  [getSearchValue],
+  search => search,
 );

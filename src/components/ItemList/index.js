@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Link } from "react-router-dom";
+import { Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ItemAbout from '../ItemAbout'
+import ItemAbout from '../ItemAbout';
 import styles from './style.scss';
 
 class ItemList extends Component {
@@ -100,7 +100,7 @@ class ItemList extends Component {
             >
             &#x270e;
             </div>
-            <Link to={`/list/${itemList.id}`}>Подробнее</Link>
+            <Link to={`/list/${itemList.id}`} className={styles.btnAbout}><span className={styles.btnAboutSpan}>&#8250;</span></Link>
           </div>
         )}
       </div>

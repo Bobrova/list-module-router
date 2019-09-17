@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import App from './components/App';
 import ItemAbout from './components/ItemAbout';
 import { store } from './store/configureStore';

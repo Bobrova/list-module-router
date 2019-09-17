@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { setSearch } from '../actions';
 import Search from '../components/Search';
-import { listSelector } from '../selectors';
+import { searchSelector } from '../selectors';
 
 const mapStateToProps = state => ({
-  list: listSelector(state),
+  search: searchSelector(state),
 });
 
 export default connect(
