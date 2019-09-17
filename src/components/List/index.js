@@ -11,17 +11,18 @@ class List extends Component {
       saveEdit,
     } = this.props;
     const listItem = list.map(item => (
-      <ItemList
-        key={item.id}
-        itemList={item}
-        delItem={delItem}
-        saveEdit={saveEdit}
-      />
+        <ItemList
+          key={item.id}
+          itemList={item}
+          delItem={delItem}
+          saveEdit={saveEdit}
+        />
     ));
 
     return (
       <section className={styles.list}>
-        <div className={styles.listMusic}>{listItem}</div>
+        <div className={styles.listMusic}>
+          {listItem}</div>
       </section>
     );
   }

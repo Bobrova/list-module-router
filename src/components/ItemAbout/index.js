@@ -1,11 +1,20 @@
-import React, { Component } from 'react';
-import { Route, Link } from "react-router-dom";
+import React, { Component, Fragment } from 'react';
+import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import {
+  delItem,
+  saveEdit,
+} from '../../actions';
+import { visibleListSelector } from '../../selectors';
 import PropTypes from 'prop-types';
-import ItemAbout from '../ItemAbout'
 import styles from './style.scss';
 
-class ItemList extends Component {
-  state = {
+const mapStateToProps = (state) => ({
+  list: visibleListSelector(state),
+});
+
+class ItemAbout extends Component{
+    state = {
     idEdit: 0,
     songEdit: '',
     singerEdit: '',
@@ -37,29 +46,20 @@ class ItemList extends Component {
     });
   }
 
-  handleDelItem = () => {
-    const { delItem, itemList } = this.props;
-    delItem(itemList.id);
-  };
-
   handleEditItem = () => {
-    const {
-      itemList,
-    } = this.props;
+    const { list, match } = this.props;
+    const itemList = list.filter(item => item.id == match.params.id)[0];
     this.setState({
       idEdit: itemList.id,
       songEdit: itemList.song,
       singerEdit: itemList.singer,
     });
   };
-
   render() {
-    const {
-      itemList,
-    } = this.props;
+    const { list, match } = this.props;
+    const itemList = list.filter(item => item.id == match.params.id)[0];
 
     const { idEdit, songEdit, singerEdit } = this.state;
-
     return (
       <div key={itemList.id} className={styles.listItem}>
         {itemList.id === idEdit ? (
@@ -84,34 +84,26 @@ class ItemList extends Component {
             </div>
           </div>
         ) : (
-          <div className={styles.listItem__name}>
-            <Route exact path={`/list/${itemList.id}`} component={ItemAbout} />
-            <p className={styles.list_nameSong}>{itemList.song}</p>
-            <p className={styles.list_nameSinger}>{itemList.singer}</p>
-            <div
-              className={styles.btnDel}
-              onClick={this.handleDelItem}
-            >
-              &#x2718;
-            </div>
-            <div
-              className={styles.btnEdit}
-              onClick={this.handleEditItem}
-            >
-            &#x270e;
-            </div>
-            <Link to={`/list/${itemList.id}`}>Подробнее</Link>
-          </div>
-        )}
+        <Fragment>
+        <div className={styles.listItem__name}>
+          <p className={styles.list_nameSong}>{itemList.song}</p>
+          <p className={styles.list_nameSinger}>{itemList.singer}</p>
+        </div>
+        <Link to={`/`} className={styles.btnBack}>&#11013;</Link>
+        <div className={styles.btnEdit} onClick={this.handleEditItem}>
+          &#x270e;
+        </div>
+        </Fragment>
+         )}
       </div>
-    );
-  }
+  )
+}
 }
 
-ItemList.propTypes = {
-  itemList: PropTypes.object.isRequired,
-  delItem: PropTypes.func.isRequired,
-  saveEdit: PropTypes.func.isRequired,
-};
-
-export default ItemList;
+export default connect(
+  mapStateToProps,
+  {
+    delItem,
+    saveEdit,
+  },
+)(ItemAbout);

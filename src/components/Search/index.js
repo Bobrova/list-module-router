@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import styles from './style.scss';
 
 class Search extends Component {
+
   handleSearch = (e) => {
     const { setSearch } = this.props;
-    const text = e.target.value.trim();
-    setSearch(text);
+    setSearch(e.target.value);
   }
 
   render() {
     return (
       <section className={styles.search}>
         <div className={styles.loupe}>&#128269;</div>
-        <input className={styles.searchInput} type="text" placeholder="Поиск" onChange={this.handleSearch} />
+        <input className={styles.searchInput} type="text" placeholder="Поиск" onChange={this.handleSearch}/>
       </section>
     );
   }
@@ -23,4 +24,4 @@ Search.propTypes = {
   setSearch: PropTypes.func.isRequired,
 };
 
-export default Search;
+export default withRouter(Search);
