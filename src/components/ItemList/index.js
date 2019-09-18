@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ItemAbout from '../ItemAbout';
 import styles from './style.scss';
 
 class ItemList extends Component {
@@ -59,7 +58,6 @@ class ItemList extends Component {
     } = this.props;
 
     const { idEdit, songEdit, singerEdit } = this.state;
-
     return (
       <div key={itemList.id} className={styles.listItem}>
         {itemList.id === idEdit ? (
@@ -74,7 +72,7 @@ class ItemList extends Component {
               type="text"
               className={styles.textEditing}
               value={singerEdit}
-              onChange={this.handleSingerChange}
+              onChange={this.handleSingChange}
             />
             <div
               className={styles.btnSave}
@@ -85,7 +83,6 @@ class ItemList extends Component {
           </div>
         ) : (
           <div className={styles.listItem__name}>
-            <Route exact path={`/list/${itemList.id}`} component={ItemAbout} />
             <p className={styles.list_nameSong}>{itemList.song}</p>
             <p className={styles.list_nameSinger}>{itemList.singer}</p>
             <div
