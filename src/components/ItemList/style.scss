@@ -64,20 +64,6 @@ $color-text: #514f4f;
   }
 }
 
-.btnSave {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 1.5em;
-  color: $color-text;
-
-  &:hover {
-    cursor: pointer;
-    box-shadow: 1px 1px 4px #c6c6c6;
-    background-color: #ededed;
-  }
-}
-
 .btnAbout {
   position: absolute;
   top: 0;
@@ -104,15 +90,4 @@ $color-text: #514f4f;
   color: $color-text;
   padding-bottom: 0.2em;
   text-align: center;
-}
-
-.textEditing {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #545454;
-  outline: none;
-  padding: 7px 20px 0 10px;
-  margin-bottom: 5px;
-  color: $color-text;
-  box-sizing: border-box;
 }

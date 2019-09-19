@@ -18,8 +18,12 @@ export default function list(state = initialState.list, action) {
       return state.filter(item => item.id !== action.id);
 
     case SAVE_EDIT:
-      return state.map(item => item.id === action.payload.idEdit
-        ? { ...item, song: action.payload.song, singer: action.payload.singer }
+      return state.map(item => item.id === action.payload.id
+        ? {
+          ...item,
+          song: action.payload.song,
+          singer: action.payload.singer,
+        }
         : item);
 
     default:

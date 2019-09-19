@@ -43,22 +43,6 @@ $color-text: #514f4f;
   }
 }
 
-.btnSave {
-  float: right;
-  width: 1.1em;
-  height: 1.1em;
-  font-size: 1.5em;
-  text-align: center;
-  line-height: 100%;
-  color: $color-text;
-
-  &:hover {
-    cursor: pointer;
-    box-shadow: 1px 1px 2px #c6c6c6;
-    background-color: #ededed;
-  }
-}
-
 .btnBack {
   display: inline-block;
   width: 1.5em;
@@ -74,16 +58,4 @@ $color-text: #514f4f;
     box-shadow: 1px 1px 4px #c6c6c6;
     background-color: #ededed;
   }
-}
-
-.textEditing {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #545454;
-  outline: none;
-  padding: 10px 20px 0 10px;
-  margin-bottom: 5px;
-  color: $color-text;
-  font-size: 1em;
-  box-sizing: border-box;
 }

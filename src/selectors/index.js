@@ -4,6 +4,9 @@ const getSearchValue = (state) => state.search;
 const getList = (state) => state.list;
 const getSinger = (state) => state.form.singer;
 const getSong = (state) => state.form.song;
+const getIdEdit = (state) => state.edit.idEdit;
+const getSongEdit = (state) => state.edit.songEdit;
+const getSingerEdit = (state) => state.edit.singerEdit;
 
 export const currentIdSelector = createSelector(
   [getList],
@@ -40,4 +43,19 @@ export const listSelector = createSelector(
 export const searchSelector = createSelector(
   [getSearchValue],
   search => search,
+);
+
+export const idEditSelector = createSelector(
+  [getIdEdit],
+  idEdit => idEdit,
+);
+
+export const songEditSelector = createSelector(
+  [getSongEdit],
+  songEdit => songEdit,
+);
+
+export const singerEditSelector = createSelector(
+  [getSingerEdit],
+  singerEdit => singerEdit,
 );

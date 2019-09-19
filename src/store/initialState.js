@@ -44,4 +44,9 @@ export const initialState = {
     singer: '',
   },
   search: '',
+  edit: {
+    idEdit: 0,
+    songEdit: '',
+    singerEdit: '',
+  },
 };

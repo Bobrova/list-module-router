@@ -5,85 +5,68 @@ import PropTypes from 'prop-types';
 import {
   delItem,
   saveEdit,
+  changeIdEdit,
+  changeSongEdit,
+  changeSingerEdit,
 } from '../../actions';
-import { visibleListSelector } from '../../selectors';
-
+import {
+  listSelector,
+  singerEditSelector,
+  songEditSelector,
+  idEditSelector,
+} from '../../selectors';
+import EditItem from '../EditItem';
 import styles from './style.scss';
 
 const mapStateToProps = (state) => ({
-  list: visibleListSelector(state),
+  list: listSelector(state),
+  idEdit: idEditSelector(state),
+  songEdit: songEditSelector(state),
+  singerEdit: singerEditSelector(state),
 });
 
 class ItemAbout extends Component {
-  state = {
-    idEdit: 0,
-    songEdit: '',
-    singerEdit: '',
-  };
-
-  handleSongChange = e => {
-    this.setState({ songEdit: e.target.value });
-  };
-
-  handleSingerChange = e => {
-    this.setState({ singerEdit: e.target.value });
-  };
-
-  handleClickSave = () => {
-    const {
-      saveEdit,
-    } = this.props;
-    const { idEdit, songEdit, singerEdit } = this.state;
-    if (songEdit === '' || singerEdit === '') {
-      return;
-    }
-    saveEdit({ idEdit, song: songEdit, singer: singerEdit });
-
-    this.setState({
-      idEdit: 0,
-      songEdit: '',
-      singerEdit: '',
-    });
-  }
-
   handleEditItem = () => {
-    const { list, match } = this.props;
+    const {
+      changeIdEdit,
+      list,
+      match,
+      changeSongEdit,
+      changeSingerEdit,
+    } = this.props;
     const itemList = list.filter(item => (item.id).toString() === match.params.id)[0];
-    this.setState({
-      idEdit: itemList.id,
-      songEdit: itemList.song,
-      singerEdit: itemList.singer,
-    });
+    changeIdEdit(itemList.id);
+    changeSongEdit(itemList.song);
+    changeSingerEdit(itemList.singer);
   };
 
   render() {
-    const { list, match } = this.props;
+    const {
+      list,
+      match,
+      idEdit,
+      songEdit,
+      singerEdit,
+      changeIdEdit,
+      changeSongEdit,
+      changeSingerEdit,
+      saveEdit,
+    } = this.props;
     const itemList = list.filter(item => (item.id).toString() === match.params.id)[0];
-    const { idEdit, songEdit, singerEdit } = this.state;
 
     return (
       <div key={itemList.id} className={styles.listItem}>
-        {itemList.id === idEdit ? (
-          <div className={styles.listItem__name}>
-            <input
-              type="text"
-              className={styles.textEditing}
-              value={songEdit}
-              onChange={this.handleSongChange}
-            />
-            <input
-              type="text"
-              className={styles.textEditing}
-              value={singerEdit}
-              onChange={this.handleSingerChange}
-            />
-            <div
-              className={styles.btnSave}
-              onClick={this.handleClickSave}
-            >
-            &#128190;
-            </div>
-          </div>
+        {idEdit === itemList.id ? (
+          <EditItem
+            itemList={itemList}
+            idEdit={idEdit}
+            changeIdEdit={changeIdEdit}
+            changeSongEdit={changeSongEdit}
+            changeSingerEdit={changeSingerEdit}
+            songEdit={songEdit}
+            singerEdit={singerEdit}
+            saveEdit={saveEdit}
+          />
         ) : (
           <>
             <div className={styles.listItem__name}>
@@ -103,8 +86,14 @@ class ItemAbout extends Component {
 
 ItemAbout.propTypes = {
   list: PropTypes.array.isRequired,
-  saveEdit: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,
+  idEdit: PropTypes.number.isRequired,
+  songEdit: PropTypes.string.isRequired,
+  singerEdit: PropTypes.string.isRequired,
+  changeIdEdit: PropTypes.func.isRequired,
+  changeSongEdit: PropTypes.func.isRequired,
+  changeSingerEdit: PropTypes.func.isRequired,
+  saveEdit: PropTypes.func.isRequired,
 };
 
 export default connect(
@@ -112,5 +101,8 @@ export default connect(
   {
     delItem,
     saveEdit,
+    changeIdEdit,
+    changeSongEdit,
+    changeSingerEdit,
   },
 )(ItemAbout);

@@ -7,6 +7,12 @@ class List extends Component {
   render() {
     const {
       list,
+      idEdit,
+      songEdit,
+      singerEdit,
+      changeIdEdit,
+      changeSongEdit,
+      changeSingerEdit,
       delItem,
       saveEdit,
     } = this.props;
@@ -14,6 +20,12 @@ class List extends Component {
       <ItemList
         key={item.id}
         itemList={item}
+        idEdit={idEdit}
+        songEdit={songEdit}
+        singerEdit={singerEdit}
+        changeIdEdit={changeIdEdit}
+        changeSongEdit={changeSongEdit}
+        changeSingerEdit={changeSingerEdit}
         delItem={delItem}
         saveEdit={saveEdit}
       />
@@ -31,6 +43,12 @@ class List extends Component {
 
 List.propTypes = {
   list: PropTypes.array.isRequired,
+  idEdit: PropTypes.number.isRequired,
+  songEdit: PropTypes.string.isRequired,
+  singerEdit: PropTypes.string.isRequired,
+  changeIdEdit: PropTypes.func.isRequired,
+  changeSongEdit: PropTypes.func.isRequired,
+  changeSingerEdit: PropTypes.func.isRequired,
   delItem: PropTypes.func.isRequired,
   saveEdit: PropTypes.func.isRequired,
 };
