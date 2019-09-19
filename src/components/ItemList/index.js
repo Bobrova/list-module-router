@@ -38,7 +38,6 @@ class ItemList extends Component {
       <div key={itemList.id} className={styles.listItem}>
         {idEdit === itemList.id ? (
           <EditItem
-            itemList={itemList}
             idEdit={idEdit}
             changeIdEdit={changeIdEdit}
             changeSongEdit={changeSongEdit}

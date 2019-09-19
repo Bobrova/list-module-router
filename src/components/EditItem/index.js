@@ -15,8 +15,8 @@ class EditItem extends Component {
 
   handleClickSave = () => {
     const {
+      idEdit,
       saveEdit,
-      itemList,
       songEdit,
       singerEdit,
       changeIdEdit,
@@ -24,7 +24,7 @@ class EditItem extends Component {
     if (songEdit === '' || singerEdit === '') {
       return;
     }
-    saveEdit({ id: itemList.id, song: songEdit, singer: singerEdit });
+    saveEdit({ id: idEdit, song: songEdit, singer: singerEdit });
     changeIdEdit(0);
   }
 
@@ -56,7 +56,7 @@ class EditItem extends Component {
 }
 
 EditItem.propTypes = {
-  itemList: PropTypes.object.isRequired,
+  idEdit: PropTypes.number.isRequired,
   singerEdit: PropTypes.string.isRequired,
   songEdit: PropTypes.string.isRequired,
   saveEdit: PropTypes.func.isRequired,
