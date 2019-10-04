@@ -1,7 +1,6 @@
 export const SET_SONG = 'SET_SONG';
 export const SET_SINGER = 'SET_SINGER';
 export const SET_SEARCH = 'SET_SEARCH';
-export const SAVE_EDIT = 'SAVE_EDIT';
 export const SET_ID_EDIT = 'SET_ID_EDIT';
 export const CHANGE_SONG_EDIT = 'CHANGE_SONG_EDIT';
 export const CHANGE_SINGER_EDIT = 'CHANGE_SINGER_EDIT';

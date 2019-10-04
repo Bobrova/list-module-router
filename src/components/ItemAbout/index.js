@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-  saveEdit,
   changeIdEdit,
   changeSongEdit,
   changeSingerEdit,
@@ -50,7 +49,6 @@ class ItemAbout extends Component {
       changeIdEdit,
       changeSongEdit,
       changeSingerEdit,
-      saveEdit,
       putItemRequest,
     } = this.props;
     const itemList = list.filter(item => (item.id).toString() === match.params.id)[0];
@@ -66,7 +64,6 @@ class ItemAbout extends Component {
             changeSingerEdit={changeSingerEdit}
             songEdit={songEdit}
             singerEdit={singerEdit}
-            saveEdit={saveEdit}
             putItem={putItemRequest}
           />
         ) : (
@@ -95,14 +92,12 @@ ItemAbout.propTypes = {
   changeIdEdit: PropTypes.func.isRequired,
   changeSongEdit: PropTypes.func.isRequired,
   changeSingerEdit: PropTypes.func.isRequired,
-  saveEdit: PropTypes.func.isRequired,
   putItemRequest: PropTypes.func.isRequired,
 };
 
 export default connect(
   mapStateToProps,
   {
-    saveEdit,
     changeIdEdit,
     changeSongEdit,
     changeSingerEdit,

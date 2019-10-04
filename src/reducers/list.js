@@ -1,5 +1,4 @@
 import {
-  SAVE_EDIT,
   GET_LIST_REQUEST,
   GET_LIST_SUCCESS,
   DELETE_ITEM_REQUEST,
@@ -16,15 +15,6 @@ const initialState = {
 
 export default function list(state = initialState.list, action) {
   switch (action.type) {
-    case SAVE_EDIT:
-      return state.map(item => item.id === action.payload.id
-        ? {
-          ...item,
-          song: action.payload.song,
-          singer: action.payload.singer,
-        }
-        : item);
-
     case GET_LIST_REQUEST: {
       return state;
     }

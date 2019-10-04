@@ -31,7 +31,6 @@ class ItemList extends Component {
       changeIdEdit,
       changeSongEdit,
       changeSingerEdit,
-      saveEdit,
       putItem,
     } = this.props;
 
@@ -45,7 +44,6 @@ class ItemList extends Component {
             changeSingerEdit={changeSingerEdit}
             songEdit={songEdit}
             singerEdit={singerEdit}
-            saveEdit={saveEdit}
             putItem={putItem}
           />
         ) : (
@@ -80,7 +78,6 @@ ItemList.propTypes = {
   changeIdEdit: PropTypes.func.isRequired,
   changeSongEdit: PropTypes.func.isRequired,
   changeSingerEdit: PropTypes.func.isRequired,
-  saveEdit: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
   putItem: PropTypes.func.isRequired,
 };

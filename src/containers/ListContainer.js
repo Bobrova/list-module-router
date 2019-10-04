@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import {
-  saveEdit,
   changeIdEdit,
   changeSongEdit,
   changeSingerEdit,
@@ -26,7 +25,6 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    saveEdit,
     changeIdEdit,
     changeSongEdit,
     changeSingerEdit,

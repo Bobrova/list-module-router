@@ -18,7 +18,6 @@ class List extends Component {
       changeIdEdit,
       changeSongEdit,
       changeSingerEdit,
-      saveEdit,
       deleteItemRequest,
       putItemRequest,
     } = this.props;
@@ -32,7 +31,6 @@ class List extends Component {
         changeIdEdit={changeIdEdit}
         changeSongEdit={changeSongEdit}
         changeSingerEdit={changeSingerEdit}
-        saveEdit={saveEdit}
         deleteItem={deleteItemRequest}
         putItem={putItemRequest}
       />
@@ -56,7 +54,6 @@ List.propTypes = {
   changeIdEdit: PropTypes.func.isRequired,
   changeSongEdit: PropTypes.func.isRequired,
   changeSingerEdit: PropTypes.func.isRequired,
-  saveEdit: PropTypes.func.isRequired,
   getListRequest: PropTypes.func.isRequired,
   deleteItemRequest: PropTypes.func.isRequired,
   putItemRequest: PropTypes.func.isRequired,
