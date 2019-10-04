@@ -1,5 +1,3 @@
-export const ADD_ITEM = 'ADD_ITEM';
-export const DEL_ITEM = 'DEL_ITEM';
 export const SET_SONG = 'SET_SONG';
 export const SET_SINGER = 'SET_SINGER';
 export const SET_SEARCH = 'SET_SEARCH';
@@ -7,3 +5,13 @@ export const SAVE_EDIT = 'SAVE_EDIT';
 export const SET_ID_EDIT = 'SET_ID_EDIT';
 export const CHANGE_SONG_EDIT = 'CHANGE_SONG_EDIT';
 export const CHANGE_SINGER_EDIT = 'CHANGE_SINGER_EDIT';
+
+export const GET_LIST_REQUEST = 'GET_LIST_REQUEST';
+export const GET_LIST_SUCCESS = 'GET_LIST_SUCCESS';
+export const DELETE_ITEM_SUCCESS = 'DELETE_ITEM_SUCCESS';
+export const DELETE_ITEM_REQUEST = 'DELETE_ITEM_REQUEST';
+export const POST_ITEM_SUCCESS = 'POST_ITEM_SUCCESS';
+export const POST_ITEM_REQUEST = 'POST_ITEM_REQUEST';
+export const PUT_ITEM_SUCCESS = 'PUT_ITEM_SUCCESS';
+export const PUT_ITEM_REQUEST = 'PUT_ITEM_REQUEST';
+export const FAILURE = 'FAILURE';

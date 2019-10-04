@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import {
-  delItem,
   saveEdit,
   changeIdEdit,
   changeSongEdit,
   changeSingerEdit,
+  getListRequest,
+  deleteItemRequest,
+  putItemRequest,
 } from '../actions';
 import List from '../components/List';
 import {
@@ -24,10 +26,12 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    delItem,
     saveEdit,
     changeIdEdit,
     changeSongEdit,
     changeSingerEdit,
+    getListRequest,
+    deleteItemRequest,
+    putItemRequest,
   },
 )(List);

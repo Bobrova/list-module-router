@@ -6,8 +6,8 @@ import EditItem from '../EditItem';
 
 class ItemList extends Component {
   handleDelItem = () => {
-    const { delItem, itemList } = this.props;
-    delItem(itemList.id);
+    const { itemList, deleteItem } = this.props;
+    deleteItem(itemList.id);
   };
 
   handleEditItem = () => {
@@ -32,6 +32,7 @@ class ItemList extends Component {
       changeSongEdit,
       changeSingerEdit,
       saveEdit,
+      putItem,
     } = this.props;
 
     return (
@@ -45,6 +46,7 @@ class ItemList extends Component {
             songEdit={songEdit}
             singerEdit={singerEdit}
             saveEdit={saveEdit}
+            putItem={putItem}
           />
         ) : (
           <div className={styles.listItem__name}>
@@ -78,8 +80,9 @@ ItemList.propTypes = {
   changeIdEdit: PropTypes.func.isRequired,
   changeSongEdit: PropTypes.func.isRequired,
   changeSingerEdit: PropTypes.func.isRequired,
-  delItem: PropTypes.func.isRequired,
   saveEdit: PropTypes.func.isRequired,
+  deleteItem: PropTypes.func.isRequired,
+  putItem: PropTypes.func.isRequired,
 };
 
 export default ItemList;

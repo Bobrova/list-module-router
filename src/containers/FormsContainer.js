@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import {
   setSong,
   setSinger,
-  addItem,
+  postItemRequest,
 } from '../actions';
 import Forms from '../components/Forms';
 import {
@@ -24,6 +24,6 @@ export default connect(
   {
     setSong,
     setSinger,
-    addItem,
+    postItemRequest,
   },
 )(Forms);

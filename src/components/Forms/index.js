@@ -20,19 +20,19 @@ class Forms extends Component {
       currentId,
       song,
       singer,
-      addItem,
       setSinger,
       setSong,
+      postItemRequest,
     } = this.props;
     if (song !== '' && /\S/.test(song)) {
       if (singer !== '' && /\S/.test(singer)) {
-        addItem({
+        setSinger('');
+        setSong('');
+        postItemRequest({
           id: currentId + 1,
           song: song.trim(),
           singer: singer.trim(),
         });
-        setSinger('');
-        setSong('');
       }
     }
   };
@@ -75,7 +75,7 @@ Forms.propTypes = {
   singer: PropTypes.string.isRequired,
   setSong: PropTypes.func.isRequired,
   setSinger: PropTypes.func.isRequired,
-  addItem: PropTypes.func.isRequired,
+  postItemRequest: PropTypes.func.isRequired,
 };
 
 export default Forms;

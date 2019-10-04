@@ -2,7 +2,9 @@ import {
   SET_SEARCH,
 } from '../constants/ActionTypes';
 
-import { initialState } from '../store/initialState';
+const initialState = {
+  search: '',
+};
 
 export default function search(state = initialState.search, action) {
   switch (action.type) {

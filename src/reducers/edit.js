@@ -4,7 +4,13 @@ import {
   CHANGE_SINGER_EDIT,
 } from '../constants/ActionTypes';
 
-import { initialState } from '../store/initialState';
+const initialState = {
+  edit: {
+    idEdit: 0,
+    songEdit: '',
+    singerEdit: '',
+  },
+};
 
 export default function edit(state = initialState.edit, action) {
   switch (action.type) {

@@ -4,6 +4,11 @@ import ItemList from '../ItemList';
 import styles from './style.scss';
 
 class List extends Component {
+  componentDidMount() {
+    const { getListRequest } = this.props;
+    getListRequest();
+  }
+
   render() {
     const {
       list,
@@ -13,8 +18,9 @@ class List extends Component {
       changeIdEdit,
       changeSongEdit,
       changeSingerEdit,
-      delItem,
       saveEdit,
+      deleteItemRequest,
+      putItemRequest,
     } = this.props;
     const listItem = list.map(item => (
       <ItemList
@@ -26,8 +32,9 @@ class List extends Component {
         changeIdEdit={changeIdEdit}
         changeSongEdit={changeSongEdit}
         changeSingerEdit={changeSingerEdit}
-        delItem={delItem}
         saveEdit={saveEdit}
+        deleteItem={deleteItemRequest}
+        putItem={putItemRequest}
       />
     ));
 
@@ -49,8 +56,10 @@ List.propTypes = {
   changeIdEdit: PropTypes.func.isRequired,
   changeSongEdit: PropTypes.func.isRequired,
   changeSingerEdit: PropTypes.func.isRequired,
-  delItem: PropTypes.func.isRequired,
   saveEdit: PropTypes.func.isRequired,
+  getListRequest: PropTypes.func.isRequired,
+  deleteItemRequest: PropTypes.func.isRequired,
+  putItemRequest: PropTypes.func.isRequired,
 };
 
 export default List;

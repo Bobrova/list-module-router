@@ -3,7 +3,12 @@ import {
   SET_SINGER,
 } from '../constants/ActionTypes';
 
-import { initialState } from '../store/initialState';
+const initialState = {
+  form: {
+    song: '',
+    singer: '',
+  },
+};
 
 export default function form(state = initialState.form, action) {
   switch (action.type) {
