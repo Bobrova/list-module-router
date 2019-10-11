@@ -7,13 +7,13 @@ import {
   changeSongEdit,
   changeSingerEdit,
   putItemRequest,
-} from '../../actions';
+} from 'actions';
 import {
   listSelector,
   singerEditSelector,
   songEditSelector,
   idEditSelector,
-} from '../../selectors';
+} from 'selectors';
 import EditItem from '../EditItem';
 import styles from './style.scss';
 

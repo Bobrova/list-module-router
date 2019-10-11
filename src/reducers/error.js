@@ -1,7 +1,7 @@
 
 import {
   FAILURE,
-} from '../constants/ActionTypes';
+} from 'constants/ActionTypes';
 
 const initialState = {
   error: '',

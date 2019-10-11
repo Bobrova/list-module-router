@@ -6,12 +6,23 @@ module.exports = {
   output: {
     filename: './main.js',
   },
+
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
     watchContentBase: true,
     progress: true,
+  },
+
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, 'src/components/'),
+      constants: path.resolve(__dirname, 'src/constants/'),
+      containers: path.resolve(__dirname, 'src/containers/'),
+      actions: path.resolve(__dirname, 'src/actions/'),
+      selectors: path.resolve(__dirname, 'src/selectors/')
+    }
   },
 
   module: {

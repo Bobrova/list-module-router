@@ -1,7 +1,7 @@
 import {
   SET_SONG,
   SET_SINGER,
-} from '../constants/ActionTypes';
+} from 'constants/ActionTypes';
 
 const initialState = {
   form: {

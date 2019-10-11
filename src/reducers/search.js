@@ -1,6 +1,6 @@
 import {
   SET_SEARCH,
-} from '../constants/ActionTypes';
+} from 'constants/ActionTypes';
 
 const initialState = {
   search: '',

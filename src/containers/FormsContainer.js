@@ -1,16 +1,17 @@
 import { connect } from 'react-redux';
+import Forms from 'components/Forms';
 import {
   setSong,
   setSinger,
   postItemRequest,
-} from '../actions';
-import Forms from '../components/Forms';
+} from 'actions';
+
 import {
   currentIdSelector,
   singerSelector,
   songSelector,
   listSelector,
-} from '../selectors';
+} from 'selectors';
 
 const mapStateToProps = state => ({
   list: listSelector(state),

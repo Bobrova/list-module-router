@@ -1,5 +1,5 @@
 import axios from 'axios';
-import url from '../constants/Url';
+import url from 'constants/Url';
 
 export default class apiList {
   static getList() {

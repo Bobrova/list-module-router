@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import List from 'components/List';
 import {
   changeIdEdit,
   changeSongEdit,
@@ -6,14 +7,13 @@ import {
   getListRequest,
   deleteItemRequest,
   putItemRequest,
-} from '../actions';
-import List from '../components/List';
+} from 'actions';
 import {
   visibleListSelector,
   singerEditSelector,
   songEditSelector,
   idEditSelector,
-} from '../selectors';
+} from 'selectors';
 
 const mapStateToProps = state => ({
   list: visibleListSelector(state),

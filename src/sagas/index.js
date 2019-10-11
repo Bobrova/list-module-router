@@ -9,14 +9,14 @@ import {
   POST_ITEM_REQUEST,
   DELETE_ITEM_REQUEST,
   PUT_ITEM_REQUEST,
-} from '../constants/ActionTypes';
+} from 'constants/ActionTypes';
 import {
   getListSuccess,
   postItemSuccess,
   deleteItemSuccess,
   putItemSuccess,
   failure,
-} from '../actions';
+} from 'actions';
 import api from '../api';
 
 function* getList() {

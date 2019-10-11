@@ -7,7 +7,7 @@ import {
   POST_ITEM_SUCCESS,
   PUT_ITEM_REQUEST,
   PUT_ITEM_SUCCESS,
-} from '../constants/ActionTypes';
+} from 'constants/ActionTypes';
 
 const initialState = {
   list: [],

@@ -2,7 +2,7 @@ import {
   SET_ID_EDIT,
   CHANGE_SONG_EDIT,
   CHANGE_SINGER_EDIT,
-} from '../constants/ActionTypes';
+} from 'constants/ActionTypes';
 
 const initialState = {
   edit: {
