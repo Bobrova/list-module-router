@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import List from 'components/List';
 import {
-  changeIdEdit,
-  changeSongEdit,
-  changeSingerEdit,
-  getListRequest,
-  deleteItemRequest,
-  putItemRequest,
+  changeIdEditAction,
+  changeSongEditAction,
+  changeSingerEditAction,
+  getListRequestAction,
+  deleteItemRequestAction,
+  putItemRequestAction,
 } from 'actions';
 import {
   visibleListSelector,
@@ -25,11 +25,11 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    changeIdEdit,
-    changeSongEdit,
-    changeSingerEdit,
-    getListRequest,
-    deleteItemRequest,
-    putItemRequest,
+    changeIdEditAction,
+    changeSongEditAction,
+    changeSingerEditAction,
+    getListRequestAction,
+    deleteItemRequestAction,
+    putItemRequestAction,
   },
 )(List);

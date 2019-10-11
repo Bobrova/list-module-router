@@ -4,13 +4,13 @@ import styles from './style.scss';
 
 class EditItem extends Component {
   handleSongChange = e => {
-    const { changeSongEdit } = this.props;
-    changeSongEdit(e.target.value);
+    const { changeSongEditAction } = this.props;
+    changeSongEditAction(e.target.value);
   };
 
   handleSingerChange = e => {
-    const { changeSingerEdit } = this.props;
-    changeSingerEdit(e.target.value);
+    const { changeSingerEditAction } = this.props;
+    changeSingerEditAction(e.target.value);
   };
 
   handleClickSave = () => {
@@ -18,14 +18,14 @@ class EditItem extends Component {
       idEdit,
       songEdit,
       singerEdit,
-      changeIdEdit,
-      putItem,
+      changeIdEditAction,
+      putItemRequestAction,
     } = this.props;
     if (songEdit === '' || singerEdit === '') {
       return;
     }
-    putItem({ id: idEdit, song: songEdit, singer: singerEdit });
-    changeIdEdit(0);
+    putItemRequestAction({ id: idEdit, song: songEdit, singer: singerEdit });
+    changeIdEditAction(0);
   }
 
   render() {
@@ -59,10 +59,10 @@ EditItem.propTypes = {
   idEdit: PropTypes.number.isRequired,
   singerEdit: PropTypes.string.isRequired,
   songEdit: PropTypes.string.isRequired,
-  changeSingerEdit: PropTypes.func.isRequired,
-  changeSongEdit: PropTypes.func.isRequired,
-  changeIdEdit: PropTypes.func.isRequired,
-  putItem: PropTypes.func.isRequired,
+  changeSingerEditAction: PropTypes.func.isRequired,
+  changeSongEditAction: PropTypes.func.isRequired,
+  changeIdEditAction: PropTypes.func.isRequired,
+  putItemRequestAction: PropTypes.func.isRequired,
 };
 
 export default EditItem;

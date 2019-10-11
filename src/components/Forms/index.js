@@ -4,15 +4,15 @@ import styles from './style.scss';
 
 class Forms extends Component {
   handleSongChange = e => {
-    const { setSong } = this.props;
+    const { setSongAction } = this.props;
     const text = e.target.value;
-    setSong(text);
+    setSongAction(text);
   };
 
   handleSingerChange = e => {
-    const { setSinger } = this.props;
+    const { setSingerAction } = this.props;
     const text = e.target.value;
-    setSinger(text);
+    setSingerAction(text);
   };
 
   handleClick = () => {
@@ -20,15 +20,15 @@ class Forms extends Component {
       currentId,
       song,
       singer,
-      setSinger,
-      setSong,
-      postItemRequest,
+      setSingerAction,
+      setSongAction,
+      postItemRequestAction,
     } = this.props;
     if (song !== '' && /\S/.test(song)) {
       if (singer !== '' && /\S/.test(singer)) {
-        setSinger('');
-        setSong('');
-        postItemRequest({
+        setSingerAction('');
+        setSongAction('');
+        postItemRequestAction({
           id: currentId + 1,
           song: song.trim(),
           singer: singer.trim(),
@@ -73,9 +73,9 @@ Forms.propTypes = {
   currentId: PropTypes.number.isRequired,
   song: PropTypes.string.isRequired,
   singer: PropTypes.string.isRequired,
-  setSong: PropTypes.func.isRequired,
-  setSinger: PropTypes.func.isRequired,
-  postItemRequest: PropTypes.func.isRequired,
+  setSongAction: PropTypes.func.isRequired,
+  setSingerAction: PropTypes.func.isRequired,
+  postItemRequestAction: PropTypes.func.isRequired,
 };
 
 export default Forms;

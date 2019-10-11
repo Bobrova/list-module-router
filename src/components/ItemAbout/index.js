@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-  changeIdEdit,
-  changeSongEdit,
-  changeSingerEdit,
-  putItemRequest,
+  changeIdEditAction,
+  changeSongEditAction,
+  changeSingerEditAction,
+  putItemRequestAction,
 } from 'actions';
 import {
   listSelector,
@@ -27,16 +27,16 @@ const mapStateToProps = (state) => ({
 class ItemAbout extends Component {
   handleEditItem = () => {
     const {
-      changeIdEdit,
+      changeIdEditAction,
       list,
       match,
-      changeSongEdit,
-      changeSingerEdit,
+      changeSongEditAction,
+      changeSingerEditAction,
     } = this.props;
     const itemList = list.filter(item => (item.id).toString() === match.params.id)[0];
-    changeIdEdit(itemList.id);
-    changeSongEdit(itemList.song);
-    changeSingerEdit(itemList.singer);
+    changeIdEditAction(itemList.id);
+    changeSongEditAction(itemList.song);
+    changeSingerEditAction(itemList.singer);
   };
 
   render() {
@@ -46,10 +46,10 @@ class ItemAbout extends Component {
       idEdit,
       songEdit,
       singerEdit,
-      changeIdEdit,
-      changeSongEdit,
-      changeSingerEdit,
-      putItemRequest,
+      changeIdEditAction,
+      changeSongEditAction,
+      changeSingerEditAction,
+      putItemRequestAction,
     } = this.props;
     const itemList = list.filter(item => (item.id).toString() === match.params.id)[0];
 
@@ -59,12 +59,12 @@ class ItemAbout extends Component {
           <EditItem
             itemList={itemList}
             idEdit={idEdit}
-            changeIdEdit={changeIdEdit}
-            changeSongEdit={changeSongEdit}
-            changeSingerEdit={changeSingerEdit}
+            changeIdEditAction={changeIdEditAction}
+            changeSongEditAction={changeSongEditAction}
+            changeSingerEditAction={changeSingerEditAction}
             songEdit={songEdit}
             singerEdit={singerEdit}
-            putItem={putItemRequest}
+            putItemRequestAction={putItemRequestAction}
           />
         ) : (
           <>
@@ -89,18 +89,18 @@ ItemAbout.propTypes = {
   idEdit: PropTypes.number.isRequired,
   songEdit: PropTypes.string.isRequired,
   singerEdit: PropTypes.string.isRequired,
-  changeIdEdit: PropTypes.func.isRequired,
-  changeSongEdit: PropTypes.func.isRequired,
-  changeSingerEdit: PropTypes.func.isRequired,
-  putItemRequest: PropTypes.func.isRequired,
+  changeIdEditAction: PropTypes.func.isRequired,
+  changeSongEditAction: PropTypes.func.isRequired,
+  changeSingerEditAction: PropTypes.func.isRequired,
+  putItemRequestAction: PropTypes.func.isRequired,
 };
 
 export default connect(
   mapStateToProps,
   {
-    changeIdEdit,
-    changeSongEdit,
-    changeSingerEdit,
-    putItemRequest,
+    changeIdEditAction,
+    changeSongEditAction,
+    changeSingerEditAction,
+    putItemRequestAction,
   },
 )(ItemAbout);

@@ -17,8 +17,8 @@ class Search extends Component {
     if (value) {
       history.push({ search: `search=${value}` });
     } else history.push('/');
-    const { setSearch } = this.props;
-    setSearch(e.target.value);
+    const { setSearchAction } = this.props;
+    setSearchAction(e.target.value);
   }
 
 
@@ -34,7 +34,7 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  setSearch: PropTypes.func.isRequired,
+  setSearchAction: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
   history: PropTypes.object.isRequired,
 };

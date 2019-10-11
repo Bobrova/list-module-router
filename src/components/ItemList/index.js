@@ -6,20 +6,20 @@ import EditItem from '../EditItem';
 
 class ItemList extends Component {
   handleDelItem = () => {
-    const { itemList, deleteItem } = this.props;
-    deleteItem(itemList.id);
+    const { itemList, deleteItemRequestAction } = this.props;
+    deleteItemRequestAction(itemList.id);
   };
 
   handleEditItem = () => {
     const {
-      changeIdEdit,
+      changeIdEditAction,
       itemList,
-      changeSongEdit,
-      changeSingerEdit,
+      changeSongEditAction,
+      changeSingerEditAction,
     } = this.props;
-    changeIdEdit(itemList.id);
-    changeSongEdit(itemList.song);
-    changeSingerEdit(itemList.singer);
+    changeIdEditAction(itemList.id);
+    changeSongEditAction(itemList.song);
+    changeSingerEditAction(itemList.singer);
   };
 
   render() {
@@ -28,10 +28,10 @@ class ItemList extends Component {
       idEdit,
       songEdit,
       singerEdit,
-      changeIdEdit,
-      changeSongEdit,
-      changeSingerEdit,
-      putItem,
+      changeIdEditAction,
+      changeSongEditAction,
+      changeSingerEditAction,
+      putItemRequestAction,
     } = this.props;
 
     return (
@@ -39,12 +39,12 @@ class ItemList extends Component {
         {idEdit === itemList.id ? (
           <EditItem
             idEdit={idEdit}
-            changeIdEdit={changeIdEdit}
-            changeSongEdit={changeSongEdit}
-            changeSingerEdit={changeSingerEdit}
+            changeIdEditAction={changeIdEditAction}
+            changeSongEditAction={changeSongEditAction}
+            changeSingerEditAction={changeSingerEditAction}
             songEdit={songEdit}
             singerEdit={singerEdit}
-            putItem={putItem}
+            putItemRequestAction={putItemRequestAction}
           />
         ) : (
           <div className={styles.listItem__name}>
@@ -75,11 +75,11 @@ ItemList.propTypes = {
   idEdit: PropTypes.number.isRequired,
   songEdit: PropTypes.string.isRequired,
   singerEdit: PropTypes.string.isRequired,
-  changeIdEdit: PropTypes.func.isRequired,
-  changeSongEdit: PropTypes.func.isRequired,
-  changeSingerEdit: PropTypes.func.isRequired,
-  deleteItem: PropTypes.func.isRequired,
-  putItem: PropTypes.func.isRequired,
+  changeIdEditAction: PropTypes.func.isRequired,
+  changeSongEditAction: PropTypes.func.isRequired,
+  changeSingerEditAction: PropTypes.func.isRequired,
+  deleteItemRequestAction: PropTypes.func.isRequired,
+  putItemRequestAction: PropTypes.func.isRequired,
 };
 
 export default ItemList;

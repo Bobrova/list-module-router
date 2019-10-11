@@ -11,20 +11,20 @@ import {
   PUT_ITEM_REQUEST,
 } from 'constants/ActionTypes';
 import {
-  getListSuccess,
-  postItemSuccess,
-  deleteItemSuccess,
-  putItemSuccess,
-  failure,
+  getListSuccessAction,
+  postItemSuccessAction,
+  deleteItemSuccessAction,
+  putItemSuccessAction,
+  failureAction,
 } from 'actions';
 import api from '../api';
 
 function* getList() {
   try {
     const list = yield call(api.getList);
-    yield put(getListSuccess(list));
+    yield put(getListSuccessAction(list));
   } catch (e) {
-    yield put(failure(e.message));
+    yield put(failureAction(e.message));
   }
 }
 
@@ -35,9 +35,9 @@ function* watchGetList() {
 function* postItem({ payload }) {
   try {
     const response = yield call(api.postItem, payload);
-    yield put(postItemSuccess(response.data));
+    yield put(postItemSuccessAction(response.data));
   } catch (e) {
-    yield put(failure(e.message));
+    yield put(failureAction(e.message));
   }
 }
 
@@ -48,9 +48,9 @@ function* watchPostItem() {
 function* deleteItem({ payload }) {
   try {
     yield call(api.deleteItem, payload);
-    yield put(deleteItemSuccess(payload));
+    yield put(deleteItemSuccessAction(payload));
   } catch (e) {
-    yield put(failure(e.message));
+    yield put(failureAction(e.message));
   }
 }
 
@@ -61,9 +61,9 @@ function* watchDeleteItem() {
 function* putItem({ payload }) {
   try {
     yield call(api.putItem, payload);
-    yield put(putItemSuccess(payload));
+    yield put(putItemSuccessAction(payload));
   } catch (e) {
-    yield put(failure(e.message));
+    yield put(failureAction(e.message));
   }
 }
 

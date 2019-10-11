@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Forms from 'components/Forms';
 import {
-  setSong,
-  setSinger,
-  postItemRequest,
+  setSongAction,
+  setSingerAction,
+  postItemRequestAction,
 } from 'actions';
 
 import {
@@ -23,8 +23,8 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    setSong,
-    setSinger,
-    postItemRequest,
+    setSongAction,
+    setSingerAction,
+    postItemRequestAction,
   },
 )(Forms);

@@ -5,8 +5,8 @@ import styles from './style.scss';
 
 class List extends Component {
   componentDidMount() {
-    const { getListRequest } = this.props;
-    getListRequest();
+    const { getListRequestAction } = this.props;
+    getListRequestAction();
   }
 
   render() {
@@ -15,11 +15,11 @@ class List extends Component {
       idEdit,
       songEdit,
       singerEdit,
-      changeIdEdit,
-      changeSongEdit,
-      changeSingerEdit,
-      deleteItemRequest,
-      putItemRequest,
+      changeIdEditAction,
+      changeSongEditAction,
+      changeSingerEditAction,
+      deleteItemRequestAction,
+      putItemRequestAction,
     } = this.props;
     const listItem = list.map(item => (
       <ItemList
@@ -28,11 +28,11 @@ class List extends Component {
         idEdit={idEdit}
         songEdit={songEdit}
         singerEdit={singerEdit}
-        changeIdEdit={changeIdEdit}
-        changeSongEdit={changeSongEdit}
-        changeSingerEdit={changeSingerEdit}
-        deleteItem={deleteItemRequest}
-        putItem={putItemRequest}
+        changeIdEditAction={changeIdEditAction}
+        changeSongEditAction={changeSongEditAction}
+        changeSingerEditAction={changeSingerEditAction}
+        deleteItemRequestAction={deleteItemRequestAction}
+        putItemRequestAction={putItemRequestAction}
       />
     ));
 
@@ -51,12 +51,12 @@ List.propTypes = {
   idEdit: PropTypes.number.isRequired,
   songEdit: PropTypes.string.isRequired,
   singerEdit: PropTypes.string.isRequired,
-  changeIdEdit: PropTypes.func.isRequired,
-  changeSongEdit: PropTypes.func.isRequired,
-  changeSingerEdit: PropTypes.func.isRequired,
-  getListRequest: PropTypes.func.isRequired,
-  deleteItemRequest: PropTypes.func.isRequired,
-  putItemRequest: PropTypes.func.isRequired,
+  changeIdEditAction: PropTypes.func.isRequired,
+  changeSongEditAction: PropTypes.func.isRequired,
+  changeSingerEditAction: PropTypes.func.isRequired,
+  getListRequestAction: PropTypes.func.isRequired,
+  deleteItemRequestAction: PropTypes.func.isRequired,
+  putItemRequestAction: PropTypes.func.isRequired,
 };
 
 export default List;
