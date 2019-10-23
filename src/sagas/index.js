@@ -17,7 +17,7 @@ import {
   putItemSuccessAction,
   failureAction,
 } from 'actions';
-import api from '../api';
+import api from 'api';
 
 function* getList() {
   try {

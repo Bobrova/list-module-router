@@ -21,7 +21,10 @@ module.exports = {
       constants: path.resolve(__dirname, 'src/constants/'),
       containers: path.resolve(__dirname, 'src/containers/'),
       actions: path.resolve(__dirname, 'src/actions/'),
-      selectors: path.resolve(__dirname, 'src/selectors/')
+      selectors: path.resolve(__dirname, 'src/selectors/'),
+      api: path.resolve(__dirname, 'src/api/'),
+      sagas: path.resolve(__dirname, 'src/sagas/'),
+      reducers: path.resolve(__dirname, 'src/reducers/')
     }
   },
 
