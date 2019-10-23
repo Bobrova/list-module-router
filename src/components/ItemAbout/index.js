@@ -13,7 +13,9 @@ import {
   singerEditSelector,
   songEditSelector,
   idEditSelector,
+  errorSelector,
 } from 'selectors';
+import Error from 'components/Error';
 import EditItem from '../EditItem';
 import styles from './style.scss';
 
@@ -22,6 +24,7 @@ const mapStateToProps = (state) => ({
   idEdit: idEditSelector(state),
   songEdit: songEditSelector(state),
   singerEdit: singerEditSelector(state),
+  error: errorSelector(state),
 });
 
 class ItemAbout extends Component {
@@ -50,11 +53,13 @@ class ItemAbout extends Component {
       changeSongEditAction,
       changeSingerEditAction,
       putItemRequestAction,
+      error,
     } = this.props;
     const itemList = list.filter(item => (item.id).toString() === match.params.id)[0];
 
     return (
       <div key={itemList.id} className={styles.listItem}>
+        {error && <Error error={error} />}
         {idEdit === itemList.id ? (
           <EditItem
             itemList={itemList}
@@ -93,6 +98,7 @@ ItemAbout.propTypes = {
   changeSongEditAction: PropTypes.func.isRequired,
   changeSingerEditAction: PropTypes.func.isRequired,
   putItemRequestAction: PropTypes.func.isRequired,
+  error: PropTypes.string.isRequired,
 };
 
 export default connect(

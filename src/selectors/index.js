@@ -7,6 +7,7 @@ const getSong = (state) => state.form.song;
 const getIdEdit = (state) => state.edit.idEdit;
 const getSongEdit = (state) => state.edit.songEdit;
 const getSingerEdit = (state) => state.edit.singerEdit;
+const getError = (state) => state.error;
 
 export const currentIdSelector = createSelector(
   [getList],
@@ -58,4 +59,9 @@ export const songEditSelector = createSelector(
 export const singerEditSelector = createSelector(
   [getSingerEdit],
   singerEdit => singerEdit,
+);
+
+export const errorSelector = createSelector(
+  [getError],
+  error => error,
 );

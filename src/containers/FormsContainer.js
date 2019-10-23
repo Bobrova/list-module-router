@@ -11,6 +11,7 @@ import {
   singerSelector,
   songSelector,
   listSelector,
+  errorSelector,
 } from 'selectors';
 
 const mapStateToProps = state => ({
@@ -18,6 +19,7 @@ const mapStateToProps = state => ({
   singer: singerSelector(state),
   song: songSelector(state),
   currentId: currentIdSelector(state),
+  error: errorSelector(state),
 });
 
 export default connect(
