@@ -18,14 +18,12 @@ class EditItem extends Component {
       idEdit,
       songEdit,
       singerEdit,
-      changeIdEditAction,
       putItemRequestAction,
     } = this.props;
     if (songEdit === '' || singerEdit === '') {
       return;
     }
     putItemRequestAction({ id: idEdit, song: songEdit, singer: singerEdit });
-    changeIdEditAction(0);
   }
 
   render() {
@@ -61,7 +59,6 @@ EditItem.propTypes = {
   songEdit: PropTypes.string.isRequired,
   changeSingerEditAction: PropTypes.func.isRequired,
   changeSongEditAction: PropTypes.func.isRequired,
-  changeIdEditAction: PropTypes.func.isRequired,
   putItemRequestAction: PropTypes.func.isRequired,
 };
 
