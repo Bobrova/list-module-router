@@ -63,9 +63,10 @@ function* putItem({ payload }) {
   try {
     yield call(api.putItem, payload);
     yield put(putItemSuccessAction(payload));
-    yield put(changeIdEditAction(0));
   } catch (e) {
     yield put(failureAction(e.message));
+  } finally {
+    yield put(changeIdEditAction(0));
   }
 }
 
