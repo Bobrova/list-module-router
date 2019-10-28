@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Error from 'components/Error';
+import Error from 'error';
 import styles from './style.scss';
 
 class Forms extends Component {
@@ -39,10 +39,15 @@ class Forms extends Component {
   };
 
   render() {
-    const { song, singer, error } = this.props;
+    const {
+      song,
+      singer,
+      error,
+      clearErrorFieldAction,
+    } = this.props;
     return (
       <section className={styles.dataInput}>
-        {error && <Error error={error} />}
+        {error && <Error error={error} clearErrorFieldAction={clearErrorFieldAction} />}
         <form>
           <div className={styles.formItem}>
             <input
@@ -79,6 +84,7 @@ Forms.propTypes = {
   setSingerAction: PropTypes.func.isRequired,
   postItemRequestAction: PropTypes.func.isRequired,
   error: PropTypes.string.isRequired,
+  clearErrorFieldAction: PropTypes.func.isRequired,
 };
 
 export default Forms;

@@ -4,6 +4,7 @@ import {
   setSongAction,
   setSingerAction,
   postItemRequestAction,
+  clearErrorFieldAction,
 } from 'actions';
 
 import {
@@ -28,5 +29,6 @@ export default connect(
     setSongAction,
     setSingerAction,
     postItemRequestAction,
+    clearErrorFieldAction,
   },
 )(Forms);

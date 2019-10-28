@@ -1,6 +1,6 @@
-
 import {
   FAILURE,
+  CLEAR_ERROR_FIELD,
 } from 'constants/ActionTypes';
 
 const initialState = {
@@ -13,6 +13,9 @@ export default function list(state = initialState.error, action) {
       return action.payload;
     }
 
+    case CLEAR_ERROR_FIELD: {
+      return action.payload;
+    }
     default:
       return state;
   }

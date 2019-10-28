@@ -15,7 +15,7 @@ import {
   idEditSelector,
   errorSelector,
 } from 'selectors';
-import Error from 'components/Error';
+import Error from 'error';
 import EditItem from '../EditItem';
 import styles from './style.scss';
 

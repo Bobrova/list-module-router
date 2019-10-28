@@ -16,3 +16,4 @@ export const postItemSuccessAction = item => ({ type: types.POST_ITEM_SUCCESS, p
 export const putItemRequestAction = item => ({ type: types.PUT_ITEM_REQUEST, payload: item });
 export const putItemSuccessAction = item => ({ type: types.PUT_ITEM_SUCCESS, payload: item });
 export const failureAction = error => ({ type: types.FAILURE, payload: error });
+export const clearErrorFieldAction = error => ({ type: types.CLEAR_ERROR_FIELD, payload: error });
